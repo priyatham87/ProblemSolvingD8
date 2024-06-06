@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+       
+       
+      
+
+//Assignment
+//Q-1
+// Program to print the highest occurrence of the duplicate number
+// input : [17,77,4,17,3,3,4,4,100,4]
+// output: 4
+a=[17,77,4,17,3,3,4,4,100,4]
+empty=[]
+dupCount=0;
+dup=0;
+for(i=0;i<a.length;i++)
+{
+    if(!empty.includes(a[i]))
+    {
+        empty.push(a[i])
+    }
+}
+for(i of empty)
+{
+    c=0;
+    for(j of a)
+    {
+        if(i==j)
+        {
+            c++;
+        }
+    }
+    if(c>1)
+    {
+        if(c>dupCount)
+        {
+            dup=i;
+            dupCount=c;
+        }    
+    }
+}
+console.log(a);
+console.log("Highest Repeated element in an array is:"+dup);
+
+//Q-2
+// Write a program to print the second maximum duplicate number.
+// input : [17,77,4,17,3,3,4,4,100,4]
+// output: 4
+a=[17,77,4,17,3,3,4,4,100,4]
+empty=[]
+dup=[];
+
+for(i=0;i<a.length;i++)
+{
+    if(!empty.includes(a[i]))
+    {
+        empty.push(a[i])
+    }
+}
+for(i of empty)
+{
+    c=0;
+    for(j of a)
+    {
+        if(i==j)
+        {
+            c++;
+        }
+    }
+    if(c>1)
+    {
+       dup.push(i)   
+    }
+   
+}
+dup.sort((a,b)=>b-a)
+console.log(a);
+console.log("The second maximum duplicate number in an given array is:"+dup[1]);
+
+//Q-3
+// Write a program to print the least repeated duplicate number.
+// input : [17,77,4,17,3,3,4,4,100,4,3]
+// output: 17
+
+a=[17,77,4,17,3,3,4,4,100,4,3]
+empty=[]
+dupCount=0;
+dup=0;
+for(i=0;i<a.length;i++)
+{
+    if(!empty.includes(a[i]))
+    {
+        empty.push(a[i])
+    }
+}
+for(i of empty)
+{
+    c=0;
+    for(j of a)
+    {
+        if(i==j)
+        {
+            c++;
+        }
+    }
+    if(c>1)
+    {
+        if(dupCount==0)
+        {
+            dupCount=c
+            dup=i
+        } 
+        if(c<dupCount)
+        {
+            dupCount=c
+            dup=i
+        }   
+    }
+}
+console.log(a);
+console.log("The least repeated duplicate number in an given array is:"+dup);
+
+
+
+    </script>
+    
+</body>
+</html>
